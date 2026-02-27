@@ -42,7 +42,3 @@ The prompts in this repository primarily focus on:
 - Identity and Access Management
 - Zero Trust Architecture
 - Security Operations
-
----
-
-# Repository Structure
