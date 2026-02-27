@@ -1,0 +1,368 @@
+Below is a structured 90-Day Microsoft 365 Security Roadmap you can include in your GPT project. It is designed to guide someone from a new or poorly secured tenant → a mature Zero Trust security posture.
+
+This roadmap aligns with guidance from **Microsoft Zero Trust architecture and security baselines used in Microsoft Entra ID, Microsoft Defender for Office 365, Microsoft Defender for Endpoint, Microsoft Intune, and Microsoft Purview.
+
+The philosophy is simple:
+
+Identity → Access → Devices → Email → Data → Monitoring
+
+This mirrors how most real-world Microsoft security deployments succeed.
+
+⸻
+
+Microsoft 365 Security Roadmap
+
+90 Day Implementation Plan
+
+This roadmap assumes:
+
+• A standard Microsoft 365 tenant
+• Enterprise licensing (E3/E5 or equivalent)
+• A goal of implementing Zero Trust security architecture
+
+⸻
+
+Phase 1
+
+Day 1–7 — Identity Security Foundation
+
+Identity is the single most important security boundary in Microsoft 365.
+
+Objectives
+
+Establish baseline protection for user accounts and administrators.
+
+Tasks
+
+Enable Multi-Factor Authentication for all users
+
+Enable Self-Service Password Reset
+
+Disable Legacy Authentication
+
+Configure Authentication Methods Policy
+
+Allow only secure authentication methods:
+
+• Microsoft Authenticator
+• FIDO2 keys
+• Windows Hello for Business
+
+Review Global Administrator accounts
+
+Best practice:
+
+• No more than 3–5 global admins
+
+Create two break-glass emergency accounts
+
+Requirements:
+
+• 20+ character passwords
+• Excluded from Conditional Access
+• No mailbox license
+• Monitoring alerts enabled
+
+Review application registrations and service principals
+
+Remove unused or suspicious applications.
+
+⸻
+
+Phase 2
+
+Day 7–14 — Conditional Access Baseline
+
+Conditional Access is the core security enforcement layer.
+
+Objectives
+
+Deploy foundational Conditional Access policies.
+
+Tasks
+
+Create policies in Report-Only mode first.
+
+Deploy these policies:
+
+CA01 — Block Legacy Authentication
+
+CA02 — Require MFA for All Users
+
+CA03 — Require MFA for Admins
+
+CA04 — Require MFA for Guest Users
+
+CA05 — Block High Risk Sign-ins
+
+CA06 — Block High Risk Users
+
+Create Named Locations
+
+Examples:
+
+• Corporate office IPs
+• VPN IPs
+
+Verify Conditional Access using sign-in logs.
+
+After validation:
+
+Move policies from Report-Only → Enabled
+
+⸻
+
+Phase 3
+
+Day 14–30 — Email Security
+
+Email is the #1 attack vector in Microsoft 365 environments.
+
+Objectives
+
+Secure Exchange Online and phishing defenses.
+
+Tasks
+
+Enable anti-phishing policies
+
+Enable Safe Links
+
+Enable Safe Attachments
+
+Enable impersonation protection
+
+Enable mailbox intelligence
+
+Configure external email warning banner
+
+Example:
+
+[External Email] Use caution with links or attachments
+
+Block automatic external email forwarding
+
+Configure anti-malware policies
+
+Implement email authentication:
+
+• SPF
+• DKIM
+• DMARC
+
+Enable user phishing reporting
+
+This allows users to report suspicious emails.
+
+⸻
+
+Phase 4
+
+Day 30–45 — Device Security
+
+Zero Trust requires trusted devices.
+
+Objectives
+
+Ensure devices meet security requirements before accessing Microsoft 365.
+
+Tasks
+
+Deploy Microsoft Intune device enrollment
+
+Configure device compliance policies
+
+Examples:
+
+• BitLocker encryption required
+• Antivirus enabled
+• Firewall enabled
+• OS version minimum requirements
+
+Create Conditional Access policy:
+
+Require compliant devices for Microsoft 365 access
+
+Enable Microsoft Defender for Endpoint
+
+Deploy Endpoint Detection and Response (EDR)
+
+Apply Microsoft security baselines to endpoints.
+
+⸻
+
+Phase 5
+
+Day 45–60 — Privileged Access Security
+
+Administrative access must be heavily controlled.
+
+Objectives
+
+Protect privileged identities.
+
+Tasks
+
+Deploy Privileged Identity Management (PIM)
+
+Enable Just-In-Time admin access
+
+Remove permanent privileged roles where possible.
+
+Require MFA for all administrative roles.
+
+Create Conditional Access policy:
+
+Require phishing-resistant MFA for admins
+
+Require trusted locations for admin access
+
+Implement admin activity auditing
+
+Review privileged access regularly.
+
+⸻
+
+Phase 6
+
+Day 60–75 — Data Protection
+
+Protect corporate data wherever it resides.
+
+Objectives
+
+Implement classification and protection policies.
+
+Tasks
+
+Create Sensitivity Labels
+
+Examples:
+
+• Public
+• Internal
+• Confidential
+• Highly Confidential
+
+Apply labels to:
+
+• Documents
+• Emails
+• SharePoint files
+
+Deploy Data Loss Prevention (DLP) policies
+
+Protect sensitive data types:
+
+• Credit card numbers
+• Social Security numbers
+• Financial data
+
+Enable automatic classification.
+
+Restrict external sharing settings.
+
+⸻
+
+Phase 7
+
+Day 75–90 — Monitoring & Threat Detection
+
+Security requires visibility and monitoring.
+
+Objectives
+
+Establish full security monitoring.
+
+Tasks
+
+Enable Unified Audit Logs
+
+Enable Microsoft Defender alerts
+
+Review Identity Protection alerts
+
+Monitor sign-in activity
+
+Configure security alert notifications
+
+Recommended:
+
+Export logs to SIEM
+
+Example:
+
+Security teams commonly integrate with Microsoft Sentinel.
+
+Enable Automated Investigation and Response.
+
+⸻
+
+Expected Outcome After 90 Days
+
+At the end of the roadmap, the tenant should have:
+
+• MFA enforced for all users
+• Conditional Access fully implemented
+• Legacy authentication disabled
+• Secure email protection
+• Device compliance enforcement
+• Privileged identity protection
+• Data classification and protection
+• Security monitoring and alerting
+
+This aligns with Microsoft Zero Trust architecture.
+
+⸻
+
+Questions the GPT Should Be Able to Answer During the Roadmap
+
+Example prompts administrators might ask:
+
+Week 1
+
+“How do I enable MFA for all users?”
+
+“What are break-glass accounts and how should they be configured?”
+
+⸻
+
+Week 2
+
+“What Conditional Access policies should be deployed first?”
+
+“How do I block legacy authentication?”
+
+⸻
+
+Week 4
+
+“How do I enable Safe Links and Safe Attachments?”
+
+“How do I configure impersonation protection?”
+
+⸻
+
+Week 6
+
+“How do I require compliant devices before accessing Microsoft 365?”
+
+⸻
+
+Week 8
+
+“How do I implement Privileged Identity Management?”
+
+⸻
+
+Week 10
+
+“How do I create Data Loss Prevention policies?”
+
+⸻
+
+Week 12
+
+“How do I monitor Microsoft 365 security alerts?”
+
+⸻
