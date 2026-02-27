@@ -1,0 +1,252 @@
+Below is a structured question library you can add to your Microsoft 365 Security GPT project.
+
+The goal is to help the person securing the tenant know what to ask first, progressing from basic security setup → advanced enterprise hardening.
+
+The questions are grouped by security domain, and all topics align with guidance from Microsoft security documentation and Zero Trust principles used in Microsoft Entra ID, Microsoft Defender for Office 365, Microsoft Defender for Endpoint, Microsoft Intune, and Microsoft Purview.
+
+Think of this section as:
+
+“Questions a Security Engineer Should Ask When Securing Microsoft 365.”
+
+⸻
+
+Starter Questions for Securing a Microsoft 365 Tenant
+
+These questions guide administrators through securing identity, access, email, devices, and data in Microsoft 365.
+
+⸻
+
+1. Identity Security (Getting Started)
+
+These questions focus on securing identities in Microsoft Entra ID, which is the foundation of Microsoft 365 security.
+
+Beginner Questions
+
+• How do I enable MFA for all users in Microsoft 365?
+• What is Multi-Factor Authentication and why is it important?
+• What authentication methods should be allowed in Microsoft 365?
+• What is passwordless authentication and should I enable it?
+• What are legacy authentication protocols and why should they be disabled?
+• How do I disable legacy authentication in Microsoft 365?
+• How do I view sign-in logs in Entra ID?
+• What are risky sign-ins and how are they detected?
+• What is Identity Protection and how should it be configured?
+
+⸻
+
+2. Conditional Access
+
+These questions help administrators begin using Conditional Access as the primary security control.
+
+Beginner Questions
+
+• What is Conditional Access in Microsoft 365?
+• What Conditional Access policies should every tenant have?
+• How do I create a Conditional Access policy?
+• What does Report-Only mode do?
+• How do I test Conditional Access policies safely?
+• How do I require MFA for all users using Conditional Access?
+• How do I block legacy authentication using Conditional Access?
+• What are Named Locations and how are they used?
+
+Intermediate Questions
+
+• How do I require device compliance for Microsoft 365 access?
+• How do I require MFA only when risk is detected?
+• How do I block access from specific countries?
+• How do I enforce phishing-resistant MFA?
+
+⸻
+
+3. Administrative Account Security
+
+These questions help secure privileged identities.
+
+Beginner Questions
+
+• How many Global Administrators should a tenant have?
+• What is a break-glass account and why is it required?
+• How do I create a break-glass emergency account?
+• What is Privileged Identity Management (PIM)?
+• How do I require MFA for all administrators?
+
+Intermediate Questions
+
+• How do I require just-in-time admin access?
+• How do I monitor privileged role assignments?
+• What are Administrative Units in Entra ID?
+• How do I audit administrator activity?
+
+⸻
+
+4. Service Accounts and Application Security
+
+Service accounts and application identities are frequently misunderstood and often poorly secured.
+
+Beginner Questions
+
+• What is a service account in Microsoft 365?
+• When should a service account be used?
+• What are the risks of using service accounts?
+• How do I create a service account securely?
+• Should service accounts have MFA enabled?
+
+Intermediate Questions
+
+• What is a managed identity?
+• What is an application registration?
+• What is a service principal?
+• How do I restrict application permissions in Entra ID?
+• How do I audit OAuth app permissions?
+
+⸻
+
+5. Email Security
+
+These questions help secure Exchange Online, which is the primary attack vector in most organizations.
+
+Beginner Questions
+
+• How do I enable anti-phishing protection?
+• What is Safe Links and how does it work?
+• What is Safe Attachments?
+• How do I block external email forwarding?
+• How do I enable user phishing reporting?
+
+Intermediate Questions
+
+• How do I configure impersonation protection?
+• How do I enable mailbox intelligence?
+• How do I quarantine suspicious emails?
+
+Advanced Questions
+
+• How should SPF, DKIM, and DMARC be configured?
+• How do I prevent business email compromise attacks?
+
+⸻
+
+6. Device Security
+
+These questions focus on securing endpoints using Microsoft Intune and Microsoft Defender for Endpoint.
+
+Beginner Questions
+
+• What is device compliance in Intune?
+• How do I require devices to be compliant before accessing Microsoft 365?
+• What is the difference between device enrollment and device compliance?
+• How do I require disk encryption?
+
+Intermediate Questions
+
+• What is Endpoint Detection and Response (EDR)?
+• How do I enable Defender for Endpoint?
+• What device security baselines should be applied?
+
+⸻
+
+7. Data Protection
+
+These questions help protect corporate data using Microsoft Purview.
+
+Beginner Questions
+
+• What are Sensitivity Labels?
+• How do I classify sensitive data?
+• What is Data Loss Prevention (DLP)?
+• How do I prevent users from sharing sensitive files externally?
+
+Intermediate Questions
+
+• How do I apply labels automatically to sensitive files?
+• What is Insider Risk Management?
+• How do I prevent data exfiltration?
+
+⸻
+
+8. Monitoring and Visibility
+
+Security depends heavily on logging and visibility.
+
+Beginner Questions
+
+• How do I enable Microsoft 365 audit logging?
+• Where do I view security alerts?
+• How do I monitor user login activity?
+• What logs should always be enabled?
+
+Intermediate Questions
+
+• What is Microsoft Sentinel?
+• How do I export Microsoft 365 logs to a SIEM?
+• How do I detect suspicious sign-ins?
+
+⸻
+
+9. External Collaboration
+
+External collaboration introduces risk if not controlled.
+
+Beginner Questions
+
+• How do I manage guest users in Microsoft 365?
+• Should guest users be required to use MFA?
+• How do I disable anonymous file sharing?
+
+Intermediate Questions
+
+• How do I restrict external sharing in SharePoint?
+• How do I audit guest user activity?
+
+⸻
+
+10. Security Incident Response
+
+Security teams must be prepared for compromise.
+
+Beginner Questions
+
+• What should I do if a Microsoft 365 account is compromised?
+• How do I revoke user sessions?
+• How do I reset a compromised account securely?
+
+Intermediate Questions
+
+• How do I investigate suspicious sign-ins?
+• How do I trace malicious email messages?
+
+Advanced Questions
+
+• How do I respond to data exfiltration incidents?
+• What is the Microsoft 365 incident response workflow?
+
+⸻
+
+Example Beginner Prompt
+
+Someone new to tenant security could start with questions like:
+
+• “What are the first security steps after creating a Microsoft 365 tenant?”
+• “What Conditional Access policies should I deploy first?”
+• “How do I secure administrator accounts in Microsoft 365?”
+• “How do I prevent phishing attacks in Microsoft 365?”
+
+⸻
+
+Best First Questions for New Administrators
+
+These are the best first prompts someone should ask their GPT security assistant.
+
+1️⃣ What are the first 10 security settings every Microsoft 365 tenant should configure?
+
+2️⃣ What Conditional Access policies should be deployed first?
+
+3️⃣ How do I require MFA for all users?
+
+4️⃣ How do I block legacy authentication?
+
+5️⃣ How do I secure Global Administrator accounts?
+
+6️⃣ How do I detect suspicious sign-ins?
+
+⸻
