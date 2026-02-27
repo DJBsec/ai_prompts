@@ -1,0 +1,272 @@
+Below is a structured security baseline playbook you can include in your ChatGPT project as a core knowledge reference.
+
+This creates a clear security model your GPT agent can reference when answering questions and gives you a complete Microsoft 365 tenant hardening framework.
+
+You can also use this as a guidebook to ask your AI of choice "How to do 'X' to help guide your secuirty journey"
+
+⸻
+
+Microsoft 365 Security Hardening Playbook
+
+The 50 Security Controls Every Microsoft 365 Tenant Should Have
+
+This playbook defines baseline security controls that should exist in every Microsoft 365 environment. These controls align with:
+	•	Microsoft Zero Trust architecture
+	•	Microsoft security baselines
+	•	Microsoft Defender recommendations
+	•	Identity-first security principles
+
+⸻
+
+Security Control Categories
+
+The controls are grouped into the following domains:
+	1.	Identity Security
+	2.	Privileged Access Security
+	3.	Conditional Access
+	4.	Email Protection
+	5.	Defender Security
+	6.	Device Security
+	7.	Data Protection
+	8.	Logging & Monitoring
+	9.	External Collaboration Security
+	10.	Incident Response & Resilience
+
+⸻
+
+1. Identity Security (Entra ID)
+
+Use identity as the primary security boundary.
+
+Controls
+	1.	Enforce Multi-Factor Authentication for all users
+	2.	Require MFA for all administrators
+	3.	Enable Microsoft Authenticator passwordless sign-in
+	4.	Disable legacy authentication protocols
+	5.	Enable Identity Protection risk policies
+	6.	Require phishing-resistant authentication for admins
+	7.	Enable Self Service Password Reset
+	8.	Enforce strong password policies
+	9.	Restrict user consent to applications
+	10.	Monitor service principals and app registrations
+
+⸻
+
+2. Privileged Access Security
+
+Administrative accounts are the highest risk identities.
+
+Controls
+	11.	Limit Global Admins to fewer than 5 accounts
+	12.	Implement Privileged Identity Management (PIM)
+	13.	Require Just-In-Time admin access
+	14.	Create break-glass emergency accounts
+	15.	Protect break-glass accounts with long passwords and exclusions from CA
+	16.	Require MFA for privileged roles
+	17.	Monitor privileged role assignments
+	18.	Separate admin and user accounts
+	19.	Use dedicated admin workstations
+	20.	Enable privileged access reviews
+
+⸻
+
+3. Conditional Access
+
+Conditional Access is the core enforcement engine of Zero Trust.
+
+Controls
+	21.	Require MFA for all cloud applications
+	22.	Require MFA for privileged roles
+	23.	Block legacy authentication
+	24.	Require compliant devices
+	25.	Require trusted locations for admin access
+	26.	Block high-risk sign-ins
+	27.	Block high-risk users
+	28.	Require session controls for risky sign-ins
+	29.	Require MFA for guest access
+	30.	Require device compliance for SharePoint and OneDrive
+
+⸻
+
+4. Email Security (Exchange Online + Defender for Office 365)
+
+Email is the primary entry point for attackers.
+
+Controls
+	31.	Enable Safe Links
+	32.	Enable Safe Attachments
+	33.	Configure anti-phishing policies
+	34.	Enable impersonation protection
+	35.	Enable mailbox intelligence
+	36.	Enable external email warnings
+	37.	Configure anti-malware policies
+	38.	Implement SPF, DKIM, and DMARC
+	39.	Block automatic forwarding to external domains
+	40.	Enable user phishing reporting
+
+⸻
+
+5. Microsoft Defender Security
+
+Defender provides threat detection and response across identities, endpoints, and email.
+
+Controls
+	41.	Enable Defender for Office 365
+	42.	Enable Defender for Endpoint
+	43.	Enable Defender for Identity
+	44.	Enable Defender for Cloud Apps
+	45.	Configure Automated Investigation and Response
+
+⸻
+
+6. Device Security (Intune)
+
+Device trust should be part of access control.
+
+Controls
+	46.	Require device compliance policies
+	47.	Require disk encryption
+	48.	Require endpoint detection and response
+	49.	Enforce security baselines
+	50.	Require OS patch compliance
+
+⸻
+
+7. Data Protection (Purview)
+
+Protect sensitive data regardless of where it lives.
+
+Recommended Controls
+	•	Sensitivity Labels
+	•	Data Loss Prevention
+	•	Retention Policies
+	•	Insider Risk Monitoring
+	•	Information Protection
+
+⸻
+
+8. Logging & Monitoring
+
+You cannot detect attacks without visibility.
+
+Required Logging
+
+Enable:
+	•	Unified Audit Logs
+	•	Sign-in Logs
+	•	Conditional Access Logs
+	•	Defender Alerts
+	•	Mail Flow Logs
+	•	Admin Activity Logs
+
+Recommended:
+	•	Export logs to Microsoft Sentinel
+
+⸻
+
+9. External Collaboration Security
+
+External sharing can expose sensitive data if not controlled.
+
+Controls
+	•	Restrict guest access
+	•	Require MFA for guests
+	•	Control SharePoint external sharing
+	•	Monitor guest activity
+	•	Expire unused guest accounts
+
+⸻
+
+10. Incident Response & Resilience
+
+Security is incomplete without response capability.
+
+Controls
+	•	Create incident response procedures
+	•	Enable automated investigation and response
+	•	Enable alert notifications
+	•	Implement SIEM monitoring
+	•	Maintain security runbooks
+
+⸻
+
+How the GPT Should Use This Playbook
+
+When asked security questions, the GPT should:
+	1.	Reference this control framework
+	2.	Identify which control category applies
+	3.	Provide Microsoft configuration guidance
+	4.	Explain security impact
+	5.	Provide implementation steps
+
+⸻
+
+Example GPT Response Logic
+
+User question:
+
+“How should Conditional Access be configured?”
+
+Agent should respond:
+	1.	Explain Conditional Access role in Zero Trust
+	2.	Reference controls from section 3
+	3.	Provide Microsoft recommended policies
+	4.	Provide implementation steps
+	5.	Link Microsoft documentation
+
+⸻
+
+Security Philosophy for the Project
+
+All responses should align with:
+
+Microsoft Zero Trust Model
+
+Principles:
+	•	Verify explicitly
+	•	Use least privilege
+	•	Assume breach
+
+⸻
+
+Optional Advanced Additions to the Project
+
+You can expand this project with additional frameworks:
+
+Microsoft 365 Security Maturity Model
+
+Levels:
+	1.	Basic Security
+	2.	Managed Security
+	3.	Advanced Security
+	4.	Zero Trust
+
+⸻
+
+Microsoft 365 Security Audit Checklist
+
+A full tenant audit framework.
+
+⸻
+
+Conditional Access Policy Library
+
+Prebuilt policies such as:
+	•	Require MFA
+	•	Block legacy authentication
+	•	Require compliant devices
+	•	Require trusted locations
+	•	Guest access restrictions
+
+⸻
+
+Microsoft 365 Incident Response Playbooks
+
+Example playbooks:
+	•	Compromised user
+	•	Phishing attack
+	•	Suspicious login
+	•	Malware in SharePoint
+	•	Data exfiltration
+
+⸻
